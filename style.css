@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #121214; /* Fundo escuro para destacar as cores neon */
+    color: #e1e1e6;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1b4d3e, #0b221a);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #00ff88; /* Verde Neon sustentável */
+    margin-bottom: 10px;
+}
+
+/* Container da Linha do Tempo */
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 40px 20px;
+}
+
+/* A linha vertical do meio */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #444, #00ff88, #00e5ff);
+    transform: translateX(-50%);
+}
+
+/* Itens da linha do tempo */
+.timeline-item {
+    width: 50%;
+    padding: 20px 40px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+/* Alinhamento alternado (Esquerda / Direita) */
+.timeline-item:nth-child(even) {
+    left: 0;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 50%;
+}
+
+/* Os balões de texto */
+.timeline-content {
+    padding: 30px;
+    background: #1f1f23;
+    border-radius: 12px;
+    border: 1px solid #29292e;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.date {
+    display: inline-block;
+    color: #00ff88;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.timeline-content h2 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: #a8a8b3;
+    line-height: 1.6;
+}
+
+/* Classe que o JavaScript vai ativar quando o usuário rolar a página */
+.timeline-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    .timeline-line { left: 20px; }
+    .timeline-item { width: 100%; left: 0 !important; padding-left: 50px; padding-right: 0; }
+}
